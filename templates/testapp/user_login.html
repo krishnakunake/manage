@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.css' %}">
+    <style>
+        body{
+            background-color: #1ABC9C;
+        }
+        #d1{
+            width: 25%;
+            height: 500px;
+            background-color: white;
+            margin: auto;
+            margin-top: 100px;
+            border-top-left-radius: 15px;
+        }
+        #b1{
+            width: 200px;
+        }
+    </style>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="http://localhost:8000/testapp/login">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:8000/testapp/new-user">Sign Up</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:8000/testapp/login/">Login</a>
+        </li>
+        
+      </ul>
+    </div>
+  </nav>
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Smart City</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      
+          <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="http://localhost:8000/testapp/login">Home
+                  </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="http://localhost:8000/testapp/new-user">Sign Up
+                  </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="http://localhost:8000/testapp/login/">Login
+                  </a>
+              </li>
+             
+              
+              
+          </div>
+        </div>
+      </nav> -->
+    <div id="d1"><br>
+        <center><h1>Log in</h1></center><br><br>
+
+        <form action="http://localhost:8000/testapp/login-validate" method="post">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8"><input type="text" name="username" class="form-control" placeholder="Username"></div>
+                <div class="col-sm-2"></div>
+            </div><br><br>
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8"><input type="password" name="password" class="form-control" placeholder="*****"></div>
+                <div class="col-sm-2"></div>
+            </div>
+            
+            <br><br>
+            <center><input type="submit" value="Signin" class="btn btn-success" id="b1"></center>
+        </form>
+        <a href="http://localhost:8000/testapp/new-user" style="padding-left: 150px;">New User?</a>
+
+    </div>
+</body>
+</html>

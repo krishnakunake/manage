@@ -1,0 +1,207 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.css' %}">
+    <style>
+      body {
+        background-color: skyblue;
+      }
+      table {
+        margin-top: 20px;
+      }
+      .btn {
+          margin-top: 10px;
+      }
+      
+      .update {
+        width: 70%;
+        height: 468px;
+        background-color: white;
+        text-align: center;
+        margin: auto;
+        margin-top: 70px;
+        padding: 1% 0 1% 0;
+        border-radius: 10px;
+      }
+      .input5 {
+        border: 2px solid skyblue;
+      }
+      .form-c {
+        margin-top: 6%;
+      }
+      .form-i {
+        margin-top: 2%;
+      }
+      #td1{
+        padding-left: 65px;
+      }
+      #td2{
+        padding-left: 65px;
+      }
+      #td3{
+        padding-left: 65px;
+      }
+      
+    </style>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="http://localhost:8000/testapp/new-employee/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:8000/testapp/View-employee/">Employee List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:8000/testapp/new-employee/">New Employee</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:8000/testapp/salary/">Payment</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:8000/testapp/contact/">Contact</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:8000/testapp/logout/">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+    
+      <br>
+      <form action="http://localhost:8000/testapp/save-employee/" method="POST">
+        {% csrf_token %}
+        <div class="update">
+         <h2>New Employee </h2>
+         <table>
+           <tr>
+             <td id="td1">
+               <div class="row form-c">
+              <div class="col-lg-1"></div>
+              <div class="col-lg-10">Employee No.:</div>
+              <div class="col-lg-1"></div>
+            </div>
+            <div class="row form-i">
+              <div class="col-lg-1"></div>
+              <div class="col-lg-10"><input type="text"  name="eno" class="form-control input5"></div>
+              <div class="col-lg-1"></div>
+            </div>
+            <div class="row form-c">
+              <div class="col-lg-1"></div>
+              <div class="col-lg-10">Employee Name.:</div>
+              <div class="col-lg-1"></div>
+            </div>
+            <div class="row form-i">
+              <div class="col-lg-1"></div>
+              <div class="col-lg-10"><input type="text" name="ename" class="form-control input5"></div>
+              <div class="col-lg-1"></div>
+            </div>
+            <div class="row form-c">
+              <div class="col-lg-1"></div>
+              <div class="col-lg-10">Date Of Birth.:</div>
+              <div class="col-lg-1"></div>
+            </div>
+            <div class="row form-i">
+              <div class="col-lg-1"></div>
+              <div class="col-lg-10"><input type="date" name="bdate" class="form-control input5"></div>
+              <div class="col-lg-1"></div>
+            </div>
+            </td>
+             <td id="td2">
+              <div class="row form-c">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-10">Address:</div>
+                <div class="col-lg-1"></div>
+              </div>
+              <div class="row form-i">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-10"><input type="text"  name="eaddress" class="form-control input5"></div>
+                <div class="col-lg-1"></div>
+              </div>
+              <div class="row form-c">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-10">State:</div>
+                <div class="col-lg-1"></div>
+              </div>
+              <div class="row form-i">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-10"><input type="text" name="estate" class="form-control input5"></div>
+                <div class="col-lg-1"></div>
+              </div>
+              <div class="row form-c">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-10">Mobile Number:</div>
+                <div class="col-lg-1"></div>
+              </div>
+              <div class="row form-i">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-10"><input type="text" name="enum" class="form-control input5"></div>
+                <div class="col-lg-1"></div>
+              </div>
+              
+             </td>
+             <td id="td3">
+              <div class="row form-c">
+             <div class="col-lg-1"></div>
+             <div class="col-lg-10">Role:</div>
+             <div class="col-lg-1"></div>
+           </div>
+           <div class="row form-i">
+             <div class="col-lg-1"></div>
+             <div class="col-lg-10"><input type="text"  name="erole" class="form-control input5"></div>
+             <div class="col-lg-1"></div>
+           </div>
+           <div class="row form-c">
+             <div class="col-lg-1"></div>
+             <div class="col-lg-10">salary:</div>
+             <div class="col-lg-1"></div>
+           </div>
+           <div class="row form-i">
+             <div class="col-lg-1"></div>
+             <div class="col-lg-10"><input type="text" name="esal" class="form-control input5"></div>
+             <div class="col-lg-1"></div>
+           </div>
+           <div class="row form-c">
+             <div class="col-lg-1"></div>
+             <div class="col-lg-10">Date of joining:</div>
+             <div class="col-lg-1"></div>
+           </div>
+           <div class="row form-i">
+             <div class="col-lg-1"></div>
+             <div class="col-lg-10"><input type="date" name="ejoin" class="form-control input5"></div>
+             <div class="col-lg-1"></div>
+           </div>
+           <div class="row form-c">
+             <div class="col-lg-1"></div>
+             <div class="col-lg-10"><input type="hidden" name="id"></div>
+             <div class="col-lg-1"></div>
+           </div></td>
+           </tr>
+         </table>
+         <div class="row form-i">
+           <div class="col-lg-1"></div>
+           <div class="col-lg-10"><input type="submit" class="btn btn-primary btn-block" value="Save"></div>
+           <div class="col-lg-1"></div>
+         </div>
+     
+      
+     
+</body>
+</html> 

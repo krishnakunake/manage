@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee-List</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.css' %}">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <style>
+    .text {
+      color: black;
+    }
+  </style>
+  </head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="http://localhost:8000/testapp/new-employee/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:8000/testapp/salary/">Salary</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:8000/testapp/advance/">Advance</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:8000/testapp/view-salary/">Salary report</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:8000/testapp/View-advance/">Advance report</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:8000/testapp/logout/">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+    <div>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Employee no.</th>
+            <th scope="col">Employee name</th>
+            <th scope="col">Employee Role</th>
+            <th scope="col">Date</th>
+            <th scope="col">Advance Ammount</th>
+            <th scope="col">Action</th>
+            
+            
+          </tr>
+        </thead>
+        <tbody>
+          {% for adv in employees %}
+          <tr>
+            <td>{{adv.eno}}</td>
+            <td>{{adv.ename}}</td>
+            <td>{{adv.erole}}</td>
+            <td>{{adv.edate}}</td>
+            <td>{{adv.eadvance}}</td>
+            
+            <td><button class="btn btn-outline-primary btn-lg"><a class="text" href="http://localhost:8000/testapp/update-advance/?id={{adv.id}}">Edit</a></button> <button class="btn btn-outline-danger btn-lg"><a class="text" href="http://localhost:8000/testapp/delete-advance/?id={{adv.id}}">Delete</a></button></td>
+          </tr>
+          {% endfor %}
+
+       
+        
+        
+          <!-- {% for emp in employees %}
+          <tr>
+            <td>{{emp.eno}}</th>
+            <td>{{emp.ename}}</td>
+            <td>{{emp.esal}}</td>
+          </tr>
+          {% endfor %} -->
+          
+        </tbody>
+      </table>
+    </div>
+</body>
+</html>
